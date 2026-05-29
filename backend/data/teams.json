@@ -1,0 +1,61 @@
+[
+  { "id": "de", "name": "Alemania", "confederation": "UEFA", "group": "A", "isoCode": "de", "flagUrl": "https://flagcdn.com/w80/de.png", "strength": 87 },
+  { "id": "ar", "name": "Argentina", "confederation": "CONMEBOL", "group": "A", "isoCode": "ar", "flagUrl": "https://flagcdn.com/w80/ar.png", "strength": 95 },
+  { "id": "ma", "name": "Marruecos", "confederation": "CAF", "group": "A", "isoCode": "ma", "flagUrl": "https://flagcdn.com/w80/ma.png", "strength": 78 },
+  { "id": "kr", "name": "Corea del Sur", "confederation": "AFC", "group": "A", "isoCode": "kr", "flagUrl": "https://flagcdn.com/w80/kr.png", "strength": 72 },
+
+  { "id": "fr", "name": "Francia", "confederation": "UEFA", "group": "B", "isoCode": "fr", "flagUrl": "https://flagcdn.com/w80/fr.png", "strength": 93 },
+  { "id": "br", "name": "Brasil", "confederation": "CONMEBOL", "group": "B", "isoCode": "br", "flagUrl": "https://flagcdn.com/w80/br.png", "strength": 89 },
+  { "id": "ng", "name": "Nigeria", "confederation": "CAF", "group": "B", "isoCode": "ng", "flagUrl": "https://flagcdn.com/w80/ng.png", "strength": 64 },
+  { "id": "au", "name": "Australia", "confederation": "AFC", "group": "B", "isoCode": "au", "flagUrl": "https://flagcdn.com/w80/au.png", "strength": 68 },
+
+  { "id": "es", "name": "España", "confederation": "UEFA", "group": "C", "isoCode": "es", "flagUrl": "https://flagcdn.com/w80/es.png", "strength": 91 },
+  { "id": "uy", "name": "Uruguay", "confederation": "CONMEBOL", "group": "C", "isoCode": "uy", "flagUrl": "https://flagcdn.com/w80/uy.png", "strength": 79 },
+  { "id": "sa", "name": "Arabia Saudita", "confederation": "AFC", "group": "C", "isoCode": "sa", "flagUrl": "https://flagcdn.com/w80/sa.png", "strength": 56 },
+  { "id": "rs", "name": "Serbia", "confederation": "UEFA", "group": "C", "isoCode": "rs", "flagUrl": "https://flagcdn.com/w80/rs.png", "strength": 61 },
+
+  { "id": "gb-eng", "name": "Inglaterra", "confederation": "UEFA", "group": "D", "isoCode": "gb-eng", "flagUrl": "https://flagcdn.com/w80/gb-eng.png", "strength": 90 },
+  { "id": "co", "name": "Colombia", "confederation": "CONMEBOL", "group": "D", "isoCode": "co", "flagUrl": "https://flagcdn.com/w80/co.png", "strength": 76 },
+  { "id": "sn", "name": "Senegal", "confederation": "CAF", "group": "D", "isoCode": "sn", "flagUrl": "https://flagcdn.com/w80/sn.png", "strength": 70 },
+  { "id": "ir", "name": "Irán", "confederation": "AFC", "group": "D", "isoCode": "ir", "flagUrl": "https://flagcdn.com/w80/ir.png", "strength": 59 },
+
+  { "id": "pt", "name": "Portugal", "confederation": "UEFA", "group": "E", "isoCode": "pt", "flagUrl": "https://flagcdn.com/w80/pt.png", "strength": 88 },
+  { "id": "ec", "name": "Ecuador", "confederation": "CONMEBOL", "group": "E", "isoCode": "ec", "flagUrl": "https://flagcdn.com/w80/ec.png", "strength": 67 },
+  { "id": "eg", "name": "Egipto", "confederation": "CAF", "group": "E", "isoCode": "eg", "flagUrl": "https://flagcdn.com/w80/eg.png", "strength": 62 },
+  { "id": "jp", "name": "Japón", "confederation": "AFC", "group": "E", "isoCode": "jp", "flagUrl": "https://flagcdn.com/w80/jp.png", "strength": 77 },
+
+  { "id": "nl", "name": "Países Bajos", "confederation": "UEFA", "group": "F", "isoCode": "nl", "flagUrl": "https://flagcdn.com/w80/nl.png", "strength": 85 },
+  { "id": "ve", "name": "Venezuela", "confederation": "CONMEBOL", "group": "F", "isoCode": "ve", "flagUrl": "https://flagcdn.com/w80/ve.png", "strength": 50 },
+  { "id": "dz", "name": "Argelia", "confederation": "CAF", "group": "F", "isoCode": "dz", "flagUrl": "https://flagcdn.com/w80/dz.png", "strength": 58 },
+  { "id": "hr", "name": "Croacia", "confederation": "UEFA", "group": "F", "isoCode": "hr", "flagUrl": "https://flagcdn.com/w80/hr.png", "strength": 80 },
+
+  { "id": "be", "name": "Bélgica", "confederation": "UEFA", "group": "G", "isoCode": "be", "flagUrl": "https://flagcdn.com/w80/be.png", "strength": 84 },
+  { "id": "cd", "name": "R.D. Congo", "confederation": "CAF", "group": "G", "isoCode": "cd", "flagUrl": "https://flagcdn.com/w80/cd.png", "strength": 54 },
+  { "id": "nz", "name": "Nueva Zelanda", "confederation": "OFC", "group": "G", "isoCode": "nz", "flagUrl": "https://flagcdn.com/w80/nz.png", "strength": 44 },
+  { "id": "tr", "name": "Turquía", "confederation": "UEFA", "group": "G", "isoCode": "tr", "flagUrl": "https://flagcdn.com/w80/tr.png", "strength": 65 },
+
+  { "id": "it", "name": "Italia", "confederation": "UEFA", "group": "H", "isoCode": "it", "flagUrl": "https://flagcdn.com/w80/it.png", "strength": 83 },
+  { "id": "za", "name": "Sudáfrica", "confederation": "CAF", "group": "H", "isoCode": "za", "flagUrl": "https://flagcdn.com/w80/za.png", "strength": 52 },
+  { "id": "uz", "name": "Uzbekistán", "confederation": "AFC", "group": "H", "isoCode": "uz", "flagUrl": "https://flagcdn.com/w80/uz.png", "strength": 43 },
+  { "id": "ca", "name": "Canadá", "confederation": "CONCACAF", "group": "H", "isoCode": "ca", "flagUrl": "https://flagcdn.com/w80/ca.png", "strength": 63, "isHost": true },
+
+  { "id": "us", "name": "Estados Unidos", "confederation": "CONCACAF", "group": "I", "isoCode": "us", "flagUrl": "https://flagcdn.com/w80/us.png", "strength": 73, "isHost": true },
+  { "id": "mx", "name": "México", "confederation": "CONCACAF", "group": "I", "isoCode": "mx", "flagUrl": "https://flagcdn.com/w80/mx.png", "strength": 74, "isHost": true },
+  { "id": "pl", "name": "Polonia", "confederation": "UEFA", "group": "I", "isoCode": "pl", "flagUrl": "https://flagcdn.com/w80/pl.png", "strength": 57 },
+  { "id": "jo", "name": "Jordania", "confederation": "AFC", "group": "I", "isoCode": "jo", "flagUrl": "https://flagcdn.com/w80/jo.png", "strength": 49 },
+
+  { "id": "at", "name": "Austria", "confederation": "UEFA", "group": "J", "isoCode": "at", "flagUrl": "https://flagcdn.com/w80/at.png", "strength": 66 },
+  { "id": "cl", "name": "Chile", "confederation": "CONMEBOL", "group": "J", "isoCode": "cl", "flagUrl": "https://flagcdn.com/w80/cl.png", "strength": 46 },
+  { "id": "cm", "name": "Camerún", "confederation": "CAF", "group": "J", "isoCode": "cm", "flagUrl": "https://flagcdn.com/w80/cm.png", "strength": 53 },
+  { "id": "iq", "name": "Irak", "confederation": "AFC", "group": "J", "isoCode": "iq", "flagUrl": "https://flagcdn.com/w80/iq.png", "strength": 46 },
+
+  { "id": "ch", "name": "Suiza", "confederation": "UEFA", "group": "K", "isoCode": "ch", "flagUrl": "https://flagcdn.com/w80/ch.png", "strength": 71 },
+  { "id": "dk", "name": "Dinamarca", "confederation": "UEFA", "group": "K", "isoCode": "dk", "flagUrl": "https://flagcdn.com/w80/dk.png", "strength": 69 },
+  { "id": "cr", "name": "Costa Rica", "confederation": "CONCACAF", "group": "K", "isoCode": "cr", "flagUrl": "https://flagcdn.com/w80/cr.png", "strength": 51 },
+  { "id": "ci", "name": "Costa de Marfil", "confederation": "CAF", "group": "K", "isoCode": "ci", "flagUrl": "https://flagcdn.com/w80/ci.png", "strength": 55 },
+
+  { "id": "ua", "name": "Ucrania", "confederation": "UEFA", "group": "L", "isoCode": "ua", "flagUrl": "https://flagcdn.com/w80/ua.png", "strength": 60 },
+  { "id": "pa", "name": "Panamá", "confederation": "CONCACAF", "group": "L", "isoCode": "pa", "flagUrl": "https://flagcdn.com/w80/pa.png", "strength": 47 },
+  { "id": "hn", "name": "Honduras", "confederation": "CONCACAF", "group": "L", "isoCode": "hn", "flagUrl": "https://flagcdn.com/w80/hn.png", "strength": 45 },
+  { "id": "id", "name": "Indonesia", "confederation": "AFC", "group": "L", "isoCode": "id", "flagUrl": "https://flagcdn.com/w80/id.png", "strength": 40 }
+]
