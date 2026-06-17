@@ -7,6 +7,12 @@
         <span class="brand-sub">Mundial FIFA 2026</span>
       </div>
     </RouterLink>
+
+    <div class="nav-links">
+      <RouterLink to="/" class="nav-link" active-class="active" exact>Equipos</RouterLink>
+      <RouterLink to="/matches" class="nav-link" active-class="active">Partidos</RouterLink>
+    </div>
+
     <div class="nav-right">
       <span class="status-dot" :class="{ active: apiOk }"></span>
       <span class="status-label">{{ apiOk ? 'API Online' : 'Conectando...' }}</span>
@@ -42,12 +48,14 @@ onMounted(async () => {
   position: sticky;
   top: 0;
   z-index: 100;
+  gap: 16px;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-shrink: 0;
 }
 
 .logo {
@@ -78,10 +86,35 @@ onMounted(async () => {
   text-transform: uppercase;
 }
 
+.nav-links {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-link {
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-link.active {
+  color: var(--gold);
+}
+
 .nav-right {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .status-dot {
@@ -100,5 +133,24 @@ onMounted(async () => {
 .status-label {
   font-size: 0.78rem;
   color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .brand-sub,
+  .status-label {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
 }
 </style>
