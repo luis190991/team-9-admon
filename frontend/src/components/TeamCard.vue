@@ -1,5 +1,13 @@
 <template>
   <RouterLink :to="`/team/${team.id}`" class="team-card">
+    <button
+      class="fav-btn"
+      :class="{ active: isFavorite(team.id) }"
+      :title="isFavorite(team.id) ? 'Quitar de favoritos' : 'Agregar a favoritos'"
+      @click="toggleFavorite(team.id, $event)"
+    >
+      {{ isFavorite(team.id) ? '★' : '☆' }}
+    </button>
     <div class="flag-wrapper">
       <img
         :src="team.flagUrl"
@@ -20,7 +28,11 @@
 </template>
 
 <script setup>
+import { useFavorites } from '../composables/useFavorites'
+
 defineProps({ team: Object })
+
+const { isFavorite, toggleFavorite } = useFavorites()
 
 const onFlagError = (e) => {
   e.target.style.display = 'none'
@@ -55,6 +67,28 @@ const onFlagError = (e) => {
   border-color: var(--gold);
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(201, 162, 39, 0.15);
+}
+
+.fav-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--text-muted);
+  padding: 2px 4px;
+  line-height: 1;
+  transition: color 0.2s, transform 0.15s;
+  z-index: 2;
+}
+
+.fav-btn:hover {
+  transform: scale(1.3);
+}
+
+.fav-btn.active {
+  color: var(--gold);
 }
 
 .flag-wrapper {
