@@ -12,6 +12,18 @@
       </div>
     </header>
 
+    <!-- Favoritos -->
+    <section v-if="favoriteTeams.length" class="favorites-section">
+      <h2 class="section-title">
+        <span class="star-icon">★</span> Mis Favoritos
+        <span class="fav-count">{{ favoriteTeams.length }}</span>
+      </h2>
+      <div class="teams-grid favorites-grid">
+        <TeamCard v-for="team in favoriteTeams" :key="team.id" :team="team" />
+      </div>
+      <div class="fav-divider"></div>
+    </section>
+
     <div class="filters">
       <div class="search-wrapper">
         <span class="search-icon">🔍</span>
@@ -31,6 +43,14 @@
         <option value="">Todos los grupos</option>
         <option v-for="g in groups" :key="g" :value="g">Grupo {{ g }}</option>
       </select>
+      <button
+        class="fav-filter-btn"
+        :class="{ active: onlyFavorites }"
+        @click="onlyFavorites = !onlyFavorites"
+        title="Mostrar solo favoritos"
+      >
+        ★ Solo favoritos
+      </button>
     </div>
 
     <div v-if="loading" class="loading-state">
@@ -39,7 +59,7 @@
     </div>
 
     <template v-else>
-      <div class="results-info" v-if="searchQuery || selectedConf || selectedGroup">
+      <div class="results-info" v-if="searchQuery || selectedConf || selectedGroup || onlyFavorites">
         <span>{{ filteredTeams.length }} equipo{{ filteredTeams.length !== 1 ? 's' : '' }} encontrado{{ filteredTeams.length !== 1 ? 's' : '' }}</span>
         <button class="reset-filters" @click="resetFilters">Limpiar filtros</button>
       </div>
@@ -61,15 +81,23 @@
 import { ref, computed, onMounted } from 'vue'
 import TeamCard from '../components/TeamCard.vue'
 import { getTeams } from '../services/api'
+import { useFavorites } from '../composables/useFavorites'
 
 const teams = ref([])
 const loading = ref(true)
 const searchQuery = ref('')
 const selectedConf = ref('')
 const selectedGroup = ref('')
+const onlyFavorites = ref(false)
+
+const { favorites } = useFavorites()
 
 const confederations = computed(() => [...new Set(teams.value.map(t => t.confederation))].sort())
 const groups = computed(() => [...new Set(teams.value.map(t => t.group))].sort())
+
+const favoriteTeams = computed(() =>
+  teams.value.filter(t => favorites.value.has(t.id))
+)
 
 const filteredTeams = computed(() => {
   return teams.value.filter(t => {
@@ -77,7 +105,8 @@ const filteredTeams = computed(() => {
     const matchName = t.name.toLowerCase().includes(q)
     const matchConf = !selectedConf.value || t.confederation === selectedConf.value
     const matchGroup = !selectedGroup.value || t.group === selectedGroup.value
-    return matchName && matchConf && matchGroup
+    const matchFav = !onlyFavorites.value || favorites.value.has(t.id)
+    return matchName && matchConf && matchGroup && matchFav
   })
 })
 
@@ -85,6 +114,7 @@ const resetFilters = () => {
   searchQuery.value = ''
   selectedConf.value = ''
   selectedGroup.value = ''
+  onlyFavorites.value = false
 }
 
 onMounted(async () => {
@@ -144,12 +174,55 @@ onMounted(async () => {
   font-weight: 600;
 }
 
+/* Favoritos */
+.favorites-section {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 0.8rem;
+}
+
+.star-icon {
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+.fav-count {
+  background: rgba(201, 162, 39, 0.15);
+  color: var(--gold);
+  font-size: 0.7rem;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.favorites-grid {
+  margin-bottom: 0;
+}
+
+.fav-divider {
+  height: 1px;
+  background: var(--border);
+  margin-top: 24px;
+}
+
+/* Filters */
 .filters {
   display: flex;
   gap: 12px;
   margin-bottom: 28px;
   flex-wrap: wrap;
-  max-width: 900px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -227,6 +300,25 @@ onMounted(async () => {
   background: var(--navy-mid);
 }
 
+.fav-filter-btn {
+  padding: 11px 18px;
+  background: var(--navy-mid);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.fav-filter-btn:hover,
+.fav-filter-btn.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201, 162, 39, 0.08);
+}
+
 .results-info {
   display: flex;
   align-items: center;
@@ -290,5 +382,21 @@ onMounted(async () => {
 
 .empty-icon {
   font-size: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .page-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .conf-select,
+  .group-select,
+  .fav-filter-btn {
+    width: 100%;
+  }
 }
 </style>
