@@ -44,3 +44,26 @@ button {
   background: var(--navy-light);
   border-radius: 3px;
 }
+
+/* Page fade-in */
+.main-content > * {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Button press feedback */
+button:active {
+  opacity: 0.75;
+  transform: scale(0.97);
+}
+
+/* Focus ring accesible */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
