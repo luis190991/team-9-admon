@@ -16,10 +16,11 @@ PrediGoal AI/
 │   └── data/         # teams.json (48 equipos), matches.json (72 partidos)
 └── frontend/         # App Vue 3 + Vite
     └── src/
-        ├── components/  # NavBar, TeamCard
-        ├── pages/       # HomePage, TeamPage
-        ├── router/      # Vue Router
-        └── services/    # Cliente API (axios)
+        ├── components/   # NavBar, TeamCard
+        ├── composables/  # useFavorites (localStorage)
+        ├── pages/        # HomePage, TeamPage, MatchesPage
+        ├── router/       # Vue Router
+        └── services/     # Cliente API (axios)
 ```
 
 ## Levantar el proyecto
@@ -59,3 +60,16 @@ npm run dev     # puerto 5173
 | 5 | Crear estructura del frontend | ✅ |
 | 6 | Crear diseño inicial de la aplicación | ✅ |
 | 16 | Realizar revisión del Sprint 1 | ✅ |
+
+## Sprint 2 — Historias completadas
+
+| # | Historia | Estado |
+|---|----------|--------|
+| 7 | Cargar calendario de partidos | ✅ |
+| 8 | Mostrar equipos en la página de inicio | ✅ |
+| 9 | Seleccionar equipo favorito | ✅ |
+| 10 | Crear página individual del equipo | ✅ |
+| 15 | Probar funcionalidades principales | ✅ |
+| 21 | Mejorar diseño visual | ✅ |
+| 22 | Crear filtro por grupo o confederación | ✅ |
+| 16b | Realizar revisión del Sprint 2 | ✅ |
